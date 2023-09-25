@@ -14,6 +14,8 @@ class Solution(object):
                 t1[char] += 1
             else:
                 t1[char] = 1
+        print(s1)
+        print(t1)
         return s1 == t1
     
 # in this problem we have solved the problem with O(n)
@@ -24,8 +26,6 @@ class Solution(object):
 solution = Solution()
 print(solution.isAnagram("listen", "silent"))  # Output: True
 print(solution.isAnagram("hello", "world"))    # Output: False
-
-
 
 
 

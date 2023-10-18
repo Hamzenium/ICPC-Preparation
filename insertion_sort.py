@@ -15,6 +15,6 @@ def insertion_sort(arr):
         arr[j + 1] = current_element
 
 # Example usage:
-my_list = [12, 11, 13, 5, 6]
+my_list = [12, 11,25, 13, 5, 6]
 insertion_sort(my_list)
 print("Sorted array is:", my_list)

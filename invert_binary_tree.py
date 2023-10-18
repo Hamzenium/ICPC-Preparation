@@ -48,4 +48,6 @@ in_order_traversal(inverted_tree)
 # You can now work with the inverted_tree as needed.
 
 
-""" The algorithm that we have developed has the time complexity of O(n), so we have the root of the array, we then  """
+""" The algorithm that we have developed has the time complexity of O(n), so we have the root of the array, when we have the root of the array
+we then use left child of the root and replae the pointer of the root with the right one , and then recursive call the fuinction to go thoough the
+array be defining a newer root until there in none left  """

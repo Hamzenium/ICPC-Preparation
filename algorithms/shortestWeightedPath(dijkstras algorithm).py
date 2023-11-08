@@ -49,9 +49,17 @@ G_example = {
     'E': {'B': 5, 'F': 3},
     'F': {'C': 1, 'E': 3}
 }
+graph = {
+    'A': {'B': 2, 'C': 4},
+    'B': {'A': 2, 'C': 1},
+    'C': {'A': 4, 'B': 1, 'D': 3},
+    'D': {'C': 3}
+}
+
+
 
 # Execute the function with the graph G and source node 'A'
-distances, predecessors = dijkstra(G_example, 'A')
+distances, predecessors = dijkstra(graph, 'A')
 
 print("Distances:", distances)
 print("Predecessors:", predecessors)

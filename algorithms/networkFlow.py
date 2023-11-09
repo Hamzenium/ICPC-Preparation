@@ -48,3 +48,65 @@ graph = {
 
 max_flow_value = ford_fulkerson(graph, 'S', 'T')
 print(f"The maximum possible flow is: {max_flow_value}")
+
+
+
+# First, let's define a function that represents the algorithm in Python.
+
+def network_flow(G, s, t):
+    # G: graph represented as a dictionary where G[u][v] is the capacity from u to v
+    # s: source vertex
+    # t: sink vertex
+    
+    # Initialize flow with zero capacity
+    F = {u: {v: 0 for v in G[u]} for u in G}
+    
+    def find_path(GF, s, t, path):
+        # Find path from s to t using DFS
+        if s == t:
+            return path
+        for v in GF[s]:
+            if GF[s][v] > 0 and not (s, v) in path:
+                res = find_path(GF, v, t, path + [(s, v)])
+                if res != None:
+                    return res
+    
+    while True:
+        # Construct the residual graph GF
+        GF = {u: {v: G[u][v] - F[u][v] for v in G[u]} for u in G}
+        
+        for u in F:
+            for v in F[u]:
+                # If there's a backward edge, include it in the residual graph with the flow as capacity
+                if F[u][v] > 0 and u != s:
+                    GF[v][u] = GF.get(v, {}).get(u, 0) + F[u][v]
+        
+        # Find path from s to t in the residual graph
+        path = find_path(GF, s, t, [])
+        if path == None:
+            # If no path is found, then we have the max flow and min cut
+            break
+        # Find the minimum residual capacity along the path
+        flow = min(GF[u][v] for u, v in path)
+        # Augment the flow along the path
+        for u, v in path:
+            F[u][v] += flow
+            F[v][u] -= flow
+    
+    # Construct the min cut (U, V)
+    U = set([s])
+    V = set(G.keys()) - U
+    frontier = [s]
+    while frontier:
+        u = frontier.pop()
+        for v in G[u]:
+            if GF[u][v] > 0 and v not in U:
+                U.add(v)
+                V.discard(v)
+                frontier.append(v)
+    
+    C = (U, V)
+    return F, C
+
+# Note: This is a basic implementation and may require additional functions or classes to handle more complex graphs.
+# It also assumes that the graph G is given in a specific dictionary format with nested dictionaries for capacities.

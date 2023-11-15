@@ -10,7 +10,7 @@ def shortest_path(G, s):
 
     while queue:
         u = queue.popleft()  # Node u taken from front of queue
-        for v in G.get(u, []):  # For each node v connected to u
+        for v in G[u]:  # For each node v connected to u
             if v not in foundHandled and v not in foundNotHandled:
                 foundNotHandled.add(v)
                 d[v] = d[u] + 1  # Distance to v is one more than distance to u

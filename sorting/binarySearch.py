@@ -17,3 +17,7 @@ def binary_search(arr, target):
 # he time complexity of the binary search algorithm is O(log n), 
 # where "n" is the number of elements in the sorted array being searched. 
 # This means that the time it takes to perform a binary search grows logarithmically with the size of the input data.
+
+
+array = [32,1,3,23,42]
+print(binary_search(array,42))

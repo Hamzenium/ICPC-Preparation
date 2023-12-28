@@ -20,8 +20,6 @@ class Solution(object):
                 hash2[index] += 1
             else:
                 hash2[index] = 1
-        print(hash1)
-        print(hash2)
         return hash1 == hash2
 
 

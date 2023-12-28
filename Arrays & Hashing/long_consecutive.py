@@ -25,8 +25,6 @@ class Solution(object):
         return answer+1
 
 
-
-
 sol = Solution()
 nums = [1,2,0,1]
 print(sol.longestConsecutive(nums))

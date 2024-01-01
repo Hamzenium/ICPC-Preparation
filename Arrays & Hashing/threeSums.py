@@ -21,4 +21,4 @@ class Solution(object):
             
 nums = [1,3,2,5]
 algorithm = Solution()
-algorithm.twoSum(nums,5)
+print(algorithm.twoSum(nums,5))

@@ -57,5 +57,5 @@ class Solution(object):
 
 solution = Solution()
 s = [3,2,6,5,0,3]
-print(solution.maxProfit(s))
+print(solution.optimized_maxProfit(s))
 

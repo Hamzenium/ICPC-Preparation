@@ -16,7 +16,7 @@ class Solution(object):
         return output
 
 solution = Solution()
-strs = "abcabcbb"
+strs = "pwwkew"
 print(solution.lengthOfLongestSubstring1(strs))
 
 class Solution(object):

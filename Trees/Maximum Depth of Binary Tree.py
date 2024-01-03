@@ -9,7 +9,7 @@ class Solution(object):
         if not root:
             return 0
         left = self.maxDepth(root.left)
-        right = left = self.maxDepth(root.right)
+        right = self.maxDepth(root.right)
 
         return 1 + max(left, right)
 

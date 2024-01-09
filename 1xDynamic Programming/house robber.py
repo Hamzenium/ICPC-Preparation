@@ -14,5 +14,5 @@ class Solution(object):
 
 
 algorithm = Solution()
-nums = [2,7,9,3,1]
+nums = [10,7,29,300,1]
 print(algorithm.rob(nums))

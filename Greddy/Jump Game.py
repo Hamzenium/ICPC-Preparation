@@ -5,8 +5,7 @@ class Solution(object):
         :rtype: bool"""
         length = len(nums) - 1
         for index in range(len(nums)-1,-1,-1):
-            print(index)
-            if index + nums[index] > length:
+            if index + nums[index] >= length:
                 length = index
 
         return True if length == 0 else False

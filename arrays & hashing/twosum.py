@@ -1,3 +1,12 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        dict = {}
+        for i, j in enumerate(nums):
+            diff = target - j
+            if diff in dict:
+                return [dict[diff], i]
+            dict[j] = i
+        return
 
 
 

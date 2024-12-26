@@ -9,3 +9,8 @@ class optimzed(object):
             countS[s[i]] = 1 + countS.get(s[i], 0)
             countT[t[i]] = 1 + countT.get(t[i], 0)
         return countS == countT
+    
+
+class bruteforce(object):
+    def isAnagram(self, s, t):
+        return sorted(s) == sorted(t)

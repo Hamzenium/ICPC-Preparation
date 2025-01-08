@@ -8,8 +8,6 @@ class Solution(object):
             dict[j] = i
         return
 
-
-
 class bruteforce(object):
     def twoSum(self, nums, target):
         for i in range(len(nums)):

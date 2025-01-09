@@ -19,5 +19,11 @@ class Solution:
             j = i + length
             res.append(s[i:j])
             i = j
-            
-        return res
+
+
+    
+
+Input = ["neet","code","love","you"]
+solution = Solution()
+output = '4#neet4#code4#love3#you'
+print(solution.decode(output))

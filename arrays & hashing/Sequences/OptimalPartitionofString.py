@@ -1,3 +1,4 @@
+
 class Solution(object):
     def partitionString(self, s):
         """
@@ -31,6 +32,7 @@ class BruteForce(object):
                 else:
                     counter = counter + 1
                     seen.clear()
+                    break
             i = j
             i = i + 1
         if len(seen) > 0:

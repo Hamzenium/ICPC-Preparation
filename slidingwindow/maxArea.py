@@ -1,20 +1,16 @@
-class Solution(object):
-    def maxArea(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
-        l, r = 0, len(height) - 1
-        highest = 0
-        while l < len(height) - 1 and r > 0:
-            total = min(height[l], height[r])
-            sum = total * (r - l)
-            highest = max(sum,highest)
-            if height[l + 1] > height[r - 1]:
-                l = l + 1
+class Solution:
+    def maxArea(self, heights: List[int]) -> int:
+        l, r = 0, len(heights) - 1
+        res = 0
+
+        while l < r:
+            area = min(heights[l], heights[r]) * (r - l)
+            res = max(res, area)
+            if heights[l] <= heights[r]:
+                l += 1
             else:
-                r = r -1
-        return highest
+                r -= 1
+        return res
                 
 class BruteForce:
     def maxArea(self, heights):
